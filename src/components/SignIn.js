@@ -15,7 +15,6 @@ const SignUp = () => {
 
     // Convert balance to an integer (in case the user enters a string or decimal)
     const balanceInt = parseInt(balance, 10);
-
     try {
       const response = await axios.post('http://localhost:5000/signup', { bankId, password, type, balance: balanceInt });
       if (response.data.status === 'success') {
